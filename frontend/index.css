@@ -1,0 +1,31 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+html, body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#wrapper {
+	width: 100%;
+	height: 100%;
+}
+#grid {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #e3e3e3;
+	z-index: 0;
+}
+
+#chart {
+	position: fixed;
+	left: 31.5%;
+	top: 2.5%;
+	width: 35%;
+	background-color: transparent;
+	z-index: 1;
+}
