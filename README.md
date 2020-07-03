@@ -23,6 +23,7 @@ to play around and see what I've made.
 * Tensorflow.js
 * p5.js
 * Sci-Kit Learn
+* Bootstrap 4
 
 ## Project Log
 You can learn more about how I created this project and what hardships I faced in my [Developer Blog](https://anishgovind.wordpress.com)
