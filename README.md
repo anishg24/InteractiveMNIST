@@ -1,12 +1,55 @@
 # Interactive MNIST
+This project is made by Anish Govind. Other projects can be found at my [GitHub](https://github.com/anishg24).
+Learn how I made this project on my [Developer Blog](https://anishgovind.wordpress.com).
 
-This is my attempt to create a "full stack" ML project, incoporating Tensorflow and Tensorflow.js to create a website that predicts in live time what digit you're
-writing in the 28x28 grid provided.
+![GitHub followers](https://img.shields.io/github/followers/anishg24?label=Follow&style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/anishg24/MalariaClassifier?style=flat-square)
 
-I followed [this tutorial](https://medium.com/@neuralnet.ai/tensorflow-js-building-a-drawable-handwritten-digits-classifier-d85beb858874) but rewrote
-the model architecture because it was stated in the article that it wasn't accurate, so I tried to make a more accurate one.
+## Project Objective
+Deep learning itself is very rewarding and it's great to accomplish training and testing a model. The issue now
+is how to allow users to play with your model so they can agree that you've done well.
+This is my first "full stack" ML project, incorporating Tensorflow and Tensorflow.js to create a website that 
+predicts what digit you're writing in the 280x280 canvas space provided. It's a simple task but one that allows users
+to play around and see what I've made.
 
-The main frontend is provided by the tutorial, but there are obvious flaws in it that require me to try and rewrite the frontend to optimize the performance of
-my model and prediction. This feature will be actively worked on while I learn JavaScript's canvas from scratch.
+### Methods Used
+* Inferential Statistics
+* Deep Learning
+* Convolutional Neural Networks
 
-I am also planning to use GitHub Pages to allow a live demo for anyone, so stay attentive to when it rolls out.
+### Technologies
+* Python 3
+* Tensorflow
+* Tensorflow.js
+* p5.js
+* Sci-Kit Learn
+
+## Project Log
+You can learn more about how I created this project and what hardships I faced in my [Developer Blog](https://anishgovind.wordpress.com)
+
+## Getting Started
+1. [Click Here](https://anishg24.github.io/InteractiveMNIST)
+2. Follow instructions on the site.
+
+Note: The model might tend to be inaccurate often times, and I will be redesigning the model architecture to get the best performance.
+
+## To-Do
+- [x] Created a frontend
+- [x] Process user input in the front end
+- [x] Get predictions from user input
+- [ ] Prettify the site
+- [ ] Add a graph that shows the predictions
+- [ ] Improve model accuracy
+
+## Releases
+- 1.0.0 (6/28/2020): First working release from tutorial
+- 1.1.0 (7/3/2020): Completely redesigned site that is more user friendly.
+
+## Contributing Members
+
+Creator: [Anish Govind](https://github.com/anishg24)
+
+Ways to contact:
+* [E-Mail](anishg24@gmail.com)
+
+**IF YOU FIND ANY ISSUES OR BUGS PLEASE OPEN AN ISSUE**

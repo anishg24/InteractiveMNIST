@@ -1,5 +1,4 @@
 import tensorflow as tf
-import numpy as np
 from sklearn.preprocessing import OneHotEncoder
 
 (X_train, y_train), (X_test, y_test) = tf.keras.datasets.mnist.load_data()

@@ -3,16 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Interactive MNIST</title>
-	<link rel="stylesheet" href="frontend/index.css">
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+    <link rel="stylesheet" href="src/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"
+            integrity="sha512-At/xiUTqCg8jxnCMRNDhDVDm4qxlyPt1K+GrDhUvRvR8MjlBq0RH65OVVaCXn3OuvyVWK8CdlQpxgrc/5YspHw=="
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<div id="wrapper" style="align-items: center">
-		<canvas id='grid'></canvas>
-		<canvas id="chart" width="800" height="400"></canvas>
-	</div>
-	<script type="text/javascript" src="frontend/index.js"></script>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Interactive MNIST</h1>
+        <p class="lead">
+            Play with simple Machine Learning concepts on this site! More projects by Anish Govind can be found
+            <a href="https://github.com/anishg24">here</a>. Check out how I made this site in my
+            <a href="https://anishgovind.wordpress.com">developer blog</a>!
+        </p>
+        <hr/>
+        <p>
+            Draw a number in the black square below then click the <code>Guess</code> button to see what number the computer
+            thinks you have drawn! If you made a mistake you can use the <code>Clear</code> button to retry.
+        </p>
+        <p class="lead">
+            <button id="guess" type="button" class="btn btn-success">Guess</button>
+            <button id="clear" type="button" class="btn btn-danger">Clear</button>
+        </p>
+        <div id="main-canvas">
+
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                 style="width: 0%" id="progress"></div>
+        </div>
+        <h2 id="out" class="text-lg-center"></h2>
+    </div>
+</div>
+<script type="text/javascript" src="src/index2.js"></script>
 </body>
 </html>
