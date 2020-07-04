@@ -5,13 +5,7 @@ async function loadNeuralNet() {
 }
 loadNeuralNet().then(r => console.log("Model Loaded."));
 
-let progressBar = document.getElementById("progress");
-let out = document.getElementById("out");
-let setBar = (percent) => {
-    progressBar.style.width = percent + "%";
-}
-
-function setup() {
+function setup(){
     let canvas = createCanvas(280, 280);
     canvas.parent("main-canvas");
     // canvas.center('horizontal');
@@ -19,14 +13,28 @@ function setup() {
     progressBar.hidden = true;
 }
 
+function draw(){
+    strokeWeight(8);
+    stroke(255);
+    if (mouseIsPressed){
+        line(pmouseX, pmouseY, mouseX, mouseY);
+    }
+}
+
+let progressBar = document.getElementById("progress");
+let setBar = (percent) => {
+    progressBar.style.width = percent + "%";
+}
+
+let out = document.getElementById("out");
+
 document.getElementById("clear").addEventListener("click", () =>{
     background(0);
     progressBar.hidden = true;
     out.innerHTML = "";
 })
 
-let guessButton = document.getElementById("guess");
-guessButton.addEventListener("click",() =>{
+document.getElementById("guess").addEventListener("click",() =>{
     const input_length = 28 * 28;
     let inputs = [];
     let img = get();
@@ -41,14 +49,6 @@ guessButton.addEventListener("click",() =>{
     out.innerHTML = "The computer thinks you've drawn a " + predictions[0];
     setBar(100);
 });
-
-function draw(){
-    strokeWeight(8);
-    stroke(255);
-    if (mouseIsPressed){
-        line(pmouseX, pmouseY, mouseX, mouseY);
-    }
-}
 
 let predict = (inputs) => {
     progressBar.hidden = false;
