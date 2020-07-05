@@ -9,7 +9,8 @@ loadNeuralNet().then(r => console.log("Model Loaded."));
 function setup() {
     let canvas = createCanvas(280, 280);
     canvas.parent("main-canvas");
-    canvas.mouseReleased(processInput)
+    canvas.mouseReleased(processInput);
+    canvas.touchEnded(processInput);
     // canvas.center('horizontal');
     background(0);
 }
@@ -49,7 +50,7 @@ let processInput = () => {
     let predictions = predict(inputs);
     console.log(predictions);
     out.innerHTML = "The computer thinks you've drawn a " + predictions[0];
-    updateGraph(predictions[1])
+    updateGraph(predictions[1]);
 }
 
 let predict = (inputs) => {
@@ -61,7 +62,7 @@ let predict = (inputs) => {
 }
 
 let updateGraph = (predictions) => {
-    // console.log(predictions)
+    // console.log("TEST")
     document.getElementById("noChart").innerHTML = ""
     predictions = predictions.map((n) => (n * 100).toPrecision(2));
     let ctx = document.getElementById("chart").getContext("2d");
