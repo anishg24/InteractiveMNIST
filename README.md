@@ -40,11 +40,12 @@ Note: The model might tend to be inaccurate often times, and I will be redesigni
 - [x] Get predictions from user input
 - [ ] Prettify the site
 - [ ] Add a graph that shows the predictions
-- [ ] Improve model accuracy
+- [x] Improve model accuracy
 
 ## Releases
-- 1.0.0 (6/28/2020): First working release from tutorial
+- 1.0.0 (6/28/2020): First working release.
 - 1.1.0 (7/3/2020): Completely redesigned site that is more user friendly.
+- 1.1.1 (7/4/2020): Fixed the user input so that the model will predict on images it's familiar with.
 
 ## Contributing Members
 
