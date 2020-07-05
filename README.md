@@ -33,8 +33,6 @@ You can learn more about how I created this project and what hardships I faced i
 1. [Click Here.](https://anishg24.github.io/InteractiveMNIST)
 2. Follow instructions on the site.
 
-Note: The model might tend to be inaccurate often times, and I will be redesigning the model architecture to get the best performance.
-
 ## To-Do
 - [x] Created a frontend
 - [x] Process user input in the front end
