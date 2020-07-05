@@ -33,22 +33,28 @@
         </p>
         <hr/>
         <p>
-            Draw a number (between 0 and 9) in the black square below then click the <code>Guess</code> button to see what number the computer
-            thinks you have drawn! If you made a mistake you can use the <code>Clear</code> button to retry. Note, this application uses machine learning, and often times
-            will not be accurate.
+            Draw a whole number (between 0 and 9) in the black square below then wait and see what number the computer
+            thinks you have drawn! If you made a mistake you can use the <code>Clear</code> button to retry.
         </p>
-        <p class="lead">
-            <button id="guess" type="button" class="btn btn-success">Guess</button>
+        <small>
+            Note, this application uses machine learning, and might not be accurate 100% of the time.
+        </small>
+        <hr/>
+        <p class="lead text-center">
             <button id="clear" type="button" class="btn btn-danger">Clear</button>
+<!--            <button id="guess" type="button" class="btn btn-success">Guess</button>-->
         </p>
-        <div id="main-canvas">
+        <div id="main-canvas" class="text-center">
 
         </div>
+        <hr/>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
                  style="width: 0%" id="progress"></div>
         </div>
+        <br>
         <h2 id="out" class="text-lg-center"></h2>
+
     </div>
 </div>
 <script type="text/javascript" src="src/index.js"></script>

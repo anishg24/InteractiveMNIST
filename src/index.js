@@ -14,11 +14,15 @@ function setup(){
 }
 
 function draw(){
-    strokeWeight(8);
+    strokeWeight(32);
     stroke(255);
     if (mouseIsPressed){
         line(pmouseX, pmouseY, mouseX, mouseY);
     }
+}
+
+function mouseReleased() {
+    processInput();
 }
 
 let progressBar = document.getElementById("progress");
@@ -34,11 +38,16 @@ document.getElementById("clear").addEventListener("click", () =>{
     out.innerHTML = "";
 })
 
-document.getElementById("guess").addEventListener("click",() =>{
+// document.getElementById("guess").addEventListener("click",() =>{
+//
+// });
+
+let processInput = () => {
     const input_length = 28 * 28;
     let inputs = [];
     let img = get();
     img.resize(28, 28);
+    // img.save("photo", "png")
     img.loadPixels();
     for (let i = 0; i < input_length; i++){
         let bright = img.pixels[i * 4];
@@ -48,7 +57,7 @@ document.getElementById("guess").addEventListener("click",() =>{
     console.log(predictions);
     out.innerHTML = "The computer thinks you've drawn a " + predictions[0];
     setBar(100);
-});
+}
 
 let predict = (inputs) => {
     progressBar.hidden = false;
