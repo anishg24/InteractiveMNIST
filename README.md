@@ -19,11 +19,12 @@ to play around and see what I've made.
 
 ### Technologies
 * Python 3
+* Sci-Kit Learn
 * Tensorflow
 * Tensorflow.js
 * p5.js
-* Sci-Kit Learn
-* Bootstrap 4
+* Chart.js
+* Bootstrap
 
 ## Project Log
 You can learn more about how I created this project and what hardships I faced in my [Developer Blog](https://anishgovind.wordpress.com/2020/07/03/interactive-mnist/).
@@ -39,13 +40,14 @@ Note: The model might tend to be inaccurate often times, and I will be redesigni
 - [x] Process user input in the front end
 - [x] Get predictions from user input
 - [ ] Prettify the site
-- [ ] Add a graph that shows the predictions
+- [x] Add a graph that shows the predictions
 - [x] Improve model accuracy
 
 ## Releases
 - 1.0.0 (6/28/2020): First working release.
 - 1.1.0 (7/3/2020): Completely redesigned site that is more user friendly.
 - 1.1.1 (7/4/2020): Fixed the user input so that the model will predict on images it's familiar with.
+- 1.2.0 (7/4/2020): Added a doughnut chart that shows prediction values.
 
 ## Contributing Members
 

@@ -1,46 +1,39 @@
 let model = null;
 
 async function loadNeuralNet() {
-	model = await tf.loadLayersModel('https://anishg24.github.io/InteractiveMNIST/model/js/model.json');
+    model = await tf.loadLayersModel('https://anishg24.github.io/InteractiveMNIST/model/js/model.json');
 }
+
 loadNeuralNet().then(r => console.log("Model Loaded."));
 
-function setup(){
+function setup() {
     let canvas = createCanvas(280, 280);
     canvas.parent("main-canvas");
+    canvas.mouseReleased(processInput)
     // canvas.center('horizontal');
     background(0);
-    progressBar.hidden = true;
 }
 
-function draw(){
+function draw() {
     strokeWeight(32);
     stroke(255);
-    if (mouseIsPressed){
+    if (mouseIsPressed) {
         line(pmouseX, pmouseY, mouseX, mouseY);
     }
 }
 
-function mouseReleased() {
-    processInput();
-}
+// function mouseReleased() {
+//     processInput();
+// }
 
-let progressBar = document.getElementById("progress");
-let setBar = (percent) => {
-    progressBar.style.width = percent + "%";
-}
 
 let out = document.getElementById("out");
 
-document.getElementById("clear").addEventListener("click", () =>{
+document.getElementById("clear").addEventListener("click", () => {
     background(0);
-    progressBar.hidden = true;
     out.innerHTML = "";
 })
 
-// document.getElementById("guess").addEventListener("click",() =>{
-//
-// });
 
 let processInput = () => {
     const input_length = 28 * 28;
@@ -49,25 +42,50 @@ let processInput = () => {
     img.resize(28, 28);
     // img.save("photo", "png")
     img.loadPixels();
-    for (let i = 0; i < input_length; i++){
+    for (let i = 0; i < input_length; i++) {
         let bright = img.pixels[i * 4];
-        inputs[i] = bright/255.0;
+        inputs[i] = bright / 255.0;
     }
     let predictions = predict(inputs);
     console.log(predictions);
     out.innerHTML = "The computer thinks you've drawn a " + predictions[0];
-    setBar(100);
+    updateGraph(predictions[1])
 }
 
 let predict = (inputs) => {
-    progressBar.hidden = false;
     let tensor = tf.tensor(inputs, [28, 28, 1], "float32");
-    setBar(25);
     tensor = tf.expandDims(tensor, 0);
-    setBar(50);
     let outputs = model.predict(tensor).dataSync();
     let predictions = Array.from(outputs).map(n => parseFloat(n.toPrecision(5)))
-    setBar(75);
     return [predictions.indexOf(max(predictions)), predictions];
 }
 
+let updateGraph = (predictions) => {
+    // console.log(predictions)
+    document.getElementById("noChart").innerHTML = ""
+    predictions = predictions.map((n) => (n * 100).toPrecision(2));
+    let ctx = document.getElementById("chart").getContext("2d");
+    let myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+            datasets: [{
+                data: predictions,
+                backgroundColor: [
+                    'rgb(197,34,51)',
+                    'rgb(251,77,61)',
+                    'rgb(255,130,0)',
+                    'rgb(239,174,43)',
+                    'rgb(228,204,55)',
+                    'rgb(242,232,99)',
+                    'rgb(143,201,58)',
+                    'rgb(0,114,187)',
+                    'rgb(30,145,214)',
+                    'rgb(121,30,148)',
+                    'rgb(202,60,255)',
+                    'rgb(227,101,193)'
+                ],
+            }]
+        },
+    });
+}
