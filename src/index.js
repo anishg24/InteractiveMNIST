@@ -9,8 +9,8 @@ loadNeuralNet().then(r => console.log("Model Loaded."));
 function setup() {
     let canvas = createCanvas(280, 280);
     canvas.parent("main-canvas");
-    canvas.mouseReleased(processInput);
     canvas.touchEnded(processInput);
+    canvas.mouseReleased(processInput);
     // canvas.center('horizontal');
     background(0);
 }
