@@ -1,7 +1,7 @@
 let model = null;
 
 async function loadNeuralNet() {
-    model = await tf.loadLayersModel('https://anishg24.github.io/InteractiveMNIST/model/js/model.json');
+    model = await tf.loadLayersModel('https://github.anishgovind.com/InteractiveMNIST/model/js/model.json');
 }
 
 loadNeuralNet().then(r => console.log("Model Loaded."));
